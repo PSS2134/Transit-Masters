@@ -25,9 +25,9 @@ function Admin({updateAdmin}) {
     const [trackDetails,setTrackDetails]=useState([]);
     useEffect(()=>{
       fetch("http://localhost:5000/api/admin").then((res)=>res.json()).then(data=>{
-         console.log(data);
+         // console.log(data);
         {data && setTrackDetails(data)};
-        console.log(trackDetails);
+        // console.log(trackDetails);
       })
     },[])
   return (
