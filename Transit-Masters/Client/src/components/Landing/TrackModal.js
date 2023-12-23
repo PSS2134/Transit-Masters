@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const TrackModal = ({closeModal}) => {
     const navigate=useNavigate();
     const [bookId,setBookId]=useState("");
-    console.log(bookId);
+    // console.log(bookId);
 
     const handleGet=async(e)=>{
         e.preventDefault();
