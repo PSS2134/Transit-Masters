@@ -36,7 +36,7 @@ const res = await fetch(`http://localhost:5000/api/admin?bookid=${bookid}`, {
   }
   var temp = String(status);
 var mySelect = useRef(null)
-console.log(mySelect)
+// console.log(mySelect)
 
 // for(var i, j = 0; i = mySelect.options[j]; j++) {
 //     if(i.value == temp) {
