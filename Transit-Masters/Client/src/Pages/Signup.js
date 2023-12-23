@@ -33,7 +33,7 @@ function Signup() {
         });
 
         const newres = await res.json();
-        console.log(newres);
+        //console.log(newres);
         if (newres == "exist") {
           toast.error("Id already exist, Please Login");
 
@@ -44,7 +44,7 @@ function Signup() {
           navigate("/login");
         }
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     }
   };
