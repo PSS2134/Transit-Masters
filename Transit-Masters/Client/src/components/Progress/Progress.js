@@ -7,7 +7,7 @@ function Progress({status}) {
 //   const [check,setCheck] =useState(false);
 
 
-console.log(status)
+// console.log(status)
   
   // console.log(progressBar.style.width)
   
