@@ -14,7 +14,7 @@ function Modal({closeModal,Price}) {
     const order_id = uuid().slice(0,8)
     const days=parseFloat(Price.d/42.2).toFixed(2)
     const userid = JSON.parse(localStorage.getItem("Data")).email;
-    console.log(Price);
+    // console.log(Price);
 
     const handlePost=async()=>{
       
