@@ -11,9 +11,9 @@ const URI = process.env.DATABASE;
 const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 mongoose.connect(URI).then(() => {
-  console.log("Connected Successfully");
+  ////console.log("Connected Successfully");
   app.listen(PORT, () => {
-    console.log("listening on port 5000...");
+    ////console.log("listening on port 5000...");
   });
 });
 app.use(cors());
@@ -57,7 +57,7 @@ app.post("/api/login", async (req, res) => {
   }
 });
 app.post("/api/booking", async (req, res) => {
-  // console.log(req.body);
+  // //console.log(req.body);
   const { userid,email, phone, bookid, e, f, dis, day, logid, price } = req.body;
   const user = await User.findOne({email:userid});
   const order = Booking({
@@ -79,31 +79,31 @@ app.post("/api/booking", async (req, res) => {
 });
 
 app.get('/api/booking', async (req, res) => {
-  // console.log('hemlo');
+  // //console.log('hemlo');
   const bookid = req.query.bookid;
-  // console.log(bookid);
+  // //console.log(bookid);
   const Track=await Booking.findOne({bookid:bookid});
-  // console.log(Track);
+  // //console.log(Track);
   return res.json(Track);
 })
 app.post('/api/admin',async (req, res) => {
   const bookid = req.query.bookid;
   const {status,message,ddate} = req.body;
   const Track=await Booking.findOne({bookid:bookid});
-  console.log(Track);
+  //console.log(Track);
   Track.status=parseInt(status, 10);
   Track.message=message;
   Track.ddate=ddate;
   await Track.save();
-  console.log(Track);
+  //console.log(Track);
   return res.json('updated');
 
 })
 app.get('/api/admin', async (req, res) => {
-  // console.log('hemlo');
+  // //console.log('hemlo');
   
   const Track=await Booking.find();
-  // console.log(Track);
+  // //console.log(Track);
   return res.json(Track);
 })
 
@@ -113,7 +113,7 @@ app.get("/api/profile", async (req, res) => {
   const { name, picture } = await User.findOne({ email: email });
   const orderArray = await Order.find({ email: email });
   const { contact } = await Address.findOne({ email: email });
-  console.log("Profile sent");
+  //console.log("Profile sent");
   return res.json({
     orderArray: orderArray,
     name: name,
@@ -136,14 +136,14 @@ app.post("/api/profile", async (req, res) => {
     cart.name = req.body.name;
     await cart.save();
   }
-  console.log(cart);
+  //console.log(cart);
   return res.json("updated");
 });
 app.put("/api/image", async (req, res) => {
   const { email, picture } = req.body;
-  console.log(picture);
+  //console.log(picture);
   const imageUpdate = await User.findOne({ email: email });
-  console.log(imageUpdate);
+  //console.log(imageUpdate);
   imageUpdate.picture = picture;
   imageUpdate.save();
   return res.json("image Uploaded succesfully");
