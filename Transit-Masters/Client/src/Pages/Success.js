@@ -24,8 +24,8 @@ const Success = ({updateUser}) => {
   };
     const queryParams = new URLSearchParams(window.location.search)
     const bookid = queryParams.get("bookid")
-   console.log(bookid);
-    console.log('hemlo')
+   //console.log(bookid);
+    //console.log('hemlo')
     const [trackDetails,setTrackDetails] =useState({});
     useEffect(() => {
     
@@ -33,7 +33,7 @@ const Success = ({updateUser}) => {
         fetch(`http://localhost:5000/api/booking?bookid=${bookid}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            //console.log(data);
             {data && setTrackDetails(data)};
             // console.log(trackDetails);
           });
@@ -48,7 +48,7 @@ const Success = ({updateUser}) => {
   })
   const name = JSON.parse(localStorage.getItem("naam"));
   const arr=['booked','shipped','out for delivery','delivered'];
-  console.log(arr[trackDetails.status])
+  //console.log(arr[trackDetails.status])
 
   const [checktrack,SetCheckTrack]=useState(false);
   // const arr=['Booked','Shipped','Out for Delivery','Delivered']
