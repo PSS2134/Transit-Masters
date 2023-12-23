@@ -18,7 +18,7 @@ const Buycard = ({updateModal,elec,fur,dis,updatePrice}) => {
       let f=Number(logData.furniture);
       let d=parseInt(logData.dist,10);
       prc=(e)*elec+(f)*fur+(d)*dis;
-      console.log(prc);
+      // console.log(prc);
       // setPrice(prc);
       updatePrice({name:logData.name,e:e,f:f,d:d,price:prc,contact:logData.phone,email:logData.email});
 
