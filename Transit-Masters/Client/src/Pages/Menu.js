@@ -34,14 +34,14 @@ const Menu = ({ userName, updateUser }) => {
   // });
   const Search=(e) => {
     setQuery(e.target.value);
-    console.log(query);
+    //console.log(query);
    
   
     }
     const filteredItems = data.filter((item)=>{
       return item.title.toLowerCase().includes(query.toLowerCase());
     })
-    console.log(filteredItems)
+    //console.log(filteredItems)
     const [checktrack,SetCheckTrack]=useState(false);
     // const arr=['Booked','Shipped','Out for Delivery','Delivered']
       const closeModal=()=>{
